@@ -46,6 +46,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtMensagem = new System.Windows.Forms.TextBox();
             this.btnLimpar = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtCaminhoArquivo = new System.Windows.Forms.TextBox();
+            this.btnProcurar = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // txtHost
@@ -63,7 +67,7 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(221, 20);
             this.txtSenha.TabIndex = 1;
-            this.txtSenha.Text = "suasenha";
+            this.txtSenha.Text = "SuaSenha";
             // 
             // txtEmail
             // 
@@ -71,7 +75,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(221, 20);
             this.txtEmail.TabIndex = 4;
-            this.txtEmail.Text = "seu@email.com.br";
+            this.txtEmail.Text = "seuemail@email.com";
             // 
             // txtPort
             // 
@@ -119,7 +123,7 @@
             // 
             // btnEnviarEmail
             // 
-            this.btnEnviarEmail.Location = new System.Drawing.Point(70, 398);
+            this.btnEnviarEmail.Location = new System.Drawing.Point(69, 424);
             this.btnEnviarEmail.Name = "btnEnviarEmail";
             this.btnEnviarEmail.Size = new System.Drawing.Size(112, 40);
             this.btnEnviarEmail.TabIndex = 9;
@@ -169,7 +173,7 @@
             // 
             // txtAssunto
             // 
-            this.txtAssunto.Location = new System.Drawing.Point(70, 164);
+            this.txtAssunto.Location = new System.Drawing.Point(69, 190);
             this.txtAssunto.Name = "txtAssunto";
             this.txtAssunto.Size = new System.Drawing.Size(221, 20);
             this.txtAssunto.TabIndex = 7;
@@ -178,7 +182,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 167);
+            this.label6.Location = new System.Drawing.Point(8, 193);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 13);
             this.label6.TabIndex = 14;
@@ -187,7 +191,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(2, 193);
+            this.label7.Location = new System.Drawing.Point(1, 219);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 13);
             this.label7.TabIndex = 16;
@@ -195,7 +199,7 @@
             // 
             // txtMensagem
             // 
-            this.txtMensagem.Location = new System.Drawing.Point(70, 190);
+            this.txtMensagem.Location = new System.Drawing.Point(69, 219);
             this.txtMensagem.Multiline = true;
             this.txtMensagem.Name = "txtMensagem";
             this.txtMensagem.Size = new System.Drawing.Size(221, 202);
@@ -204,7 +208,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(188, 398);
+            this.btnLimpar.Location = new System.Drawing.Point(187, 424);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(103, 40);
             this.btnLimpar.TabIndex = 17;
@@ -212,11 +216,44 @@
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(17, 167);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 13);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Anexo:";
+            // 
+            // txtCaminhoArquivo
+            // 
+            this.txtCaminhoArquivo.Location = new System.Drawing.Point(70, 164);
+            this.txtCaminhoArquivo.Name = "txtCaminhoArquivo";
+            this.txtCaminhoArquivo.Size = new System.Drawing.Size(188, 20);
+            this.txtCaminhoArquivo.TabIndex = 19;
+            this.txtCaminhoArquivo.Text = "Anexo";
+            // 
+            // btnProcurar
+            // 
+            this.btnProcurar.Location = new System.Drawing.Point(264, 162);
+            this.btnProcurar.Name = "btnProcurar";
+            this.btnProcurar.Size = new System.Drawing.Size(26, 22);
+            this.btnProcurar.TabIndex = 20;
+            this.btnProcurar.UseVisualStyleBackColor = true;
+            this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(302, 450);
+            this.ClientSize = new System.Drawing.Size(302, 512);
+            this.Controls.Add(this.btnProcurar);
+            this.Controls.Add(this.txtCaminhoArquivo);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtMensagem);
@@ -263,6 +300,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtMensagem;
         private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtCaminhoArquivo;
+        private System.Windows.Forms.Button btnProcurar;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

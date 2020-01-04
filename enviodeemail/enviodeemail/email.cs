@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,9 +16,10 @@ namespace enviodeemail
         public string vMensagemErro = "";
 
 
-        public void ComporCamposEmailParaEnvio(string vEmail,string vSenha,string vEmailDestinatario,string vAssunto,string vMensagem,string vHost,string vSSL,int vPort)
+        public void ComporCamposEmailParaEnvio(string vEmail,string vSenha,string vEmailDestinatario,string vAssunto,string vMensagem,string vHost,string vSSL,int vPort,string vCaminhoArquivo)
         {
             mail = new MailMessage();
+
             if (ValidaEmail(vEmail))
                 mail.From = new MailAddress(vEmail);
             else
@@ -37,6 +39,14 @@ namespace enviodeemail
             else
                 vMensagemErro += "Por favor insira uma mensagem para o email\n";
 
+
+            if ((vCaminhoArquivo != null) || (vCaminhoArquivo != ""))
+            {
+                Attachment data = new Attachment(vCaminhoArquivo, MediaTypeNames.Application.Octet);
+                mail.Attachments.Add(data);
+            }
+
+
             if ((vMensagem != null) || (vMensagem != ""))
                 smtp = new SmtpClient(vHost);
             else
@@ -53,7 +63,6 @@ namespace enviodeemail
                 vMensagemErro += "Por favor verifique a porta de cominucação\n";
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network; // modo de envio
             smtp.UseDefaultCredentials = false; // vamos utilizar credencias especificas
-
 
             if ((ValidaEmail(vEmail)) && ((vSenha != null) || (vSenha != "")))
                 smtp.Credentials = new NetworkCredential(vEmail, vSenha);

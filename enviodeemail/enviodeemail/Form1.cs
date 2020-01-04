@@ -24,6 +24,8 @@ namespace enviodeemail
 
         private void btnEnviarEmail_Click(object sender, EventArgs e)
         {
+
+
             try
             {
                 email Email = new email();
@@ -32,7 +34,7 @@ namespace enviodeemail
                 if (chkSSL.Checked)
                     vSSL = "S";
 
-                Email.ComporCamposEmailParaEnvio(txtEmail.Text, txtSenha.Text, txtEmailPara.Text, txtAssunto.Text, txtMensagem.Text, txtHost.Text, vSSL, int.Parse(txtPort.Text));
+                Email.ComporCamposEmailParaEnvio(txtEmail.Text, txtSenha.Text, txtEmailPara.Text, txtAssunto.Text, txtMensagem.Text, txtHost.Text, vSSL, int.Parse(txtPort.Text), txtCaminhoArquivo.Text) ;
 
                 if (Email.vMensagemErro == "")
                 {
@@ -62,6 +64,15 @@ namespace enviodeemail
         {
             txtMensagem.Text = "";
             txtAssunto.Text = "";
+        }
+
+        private void btnProcurar_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.InitialDirectory = @"C:\";
+            openFileDialog1.FileName = "";
+            openFileDialog1.Title = "Selecionar Arquivo";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                txtCaminhoArquivo.Text = openFileDialog1.FileName;
         }
     }
 }
