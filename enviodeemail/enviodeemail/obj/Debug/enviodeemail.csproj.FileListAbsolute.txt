@@ -1,0 +1,11 @@
+C:\Users\usuario\source\repos\enviodeemail\enviodeemail\bin\Debug\enviodeemail.exe.config
+C:\Users\usuario\source\repos\enviodeemail\enviodeemail\bin\Debug\enviodeemail.exe
+C:\Users\usuario\source\repos\enviodeemail\enviodeemail\bin\Debug\enviodeemail.pdb
+C:\Users\usuario\source\repos\enviodeemail\enviodeemail\bin\Debug\Mail.dll
+C:\Users\usuario\source\repos\enviodeemail\enviodeemail\bin\Debug\Mail.xml
+C:\Users\usuario\source\repos\enviodeemail\enviodeemail\obj\Debug\enviodeemail.Form1.resources
+C:\Users\usuario\source\repos\enviodeemail\enviodeemail\obj\Debug\enviodeemail.Properties.Resources.resources
+C:\Users\usuario\source\repos\enviodeemail\enviodeemail\obj\Debug\enviodeemail.csproj.GenerateResource.cache
+C:\Users\usuario\source\repos\enviodeemail\enviodeemail\obj\Debug\enviodeemail.csproj.CopyComplete
+C:\Users\usuario\source\repos\enviodeemail\enviodeemail\obj\Debug\enviodeemail.exe
+C:\Users\usuario\source\repos\enviodeemail\enviodeemail\obj\Debug\enviodeemail.pdb
