@@ -18,6 +18,7 @@ namespace enviodeemail
         public Form1()
         {
             InitializeComponent();
+            lstArquivos.Items.Clear();
         }
 
         
@@ -34,7 +35,17 @@ namespace enviodeemail
                 if (chkSSL.Checked)
                     vSSL = "S";
 
-                Email.ComporCamposEmailParaEnvio(txtEmail.Text, txtSenha.Text, txtEmailPara.Text, txtAssunto.Text, txtMensagem.Text, txtHost.Text, vSSL, int.Parse(txtPort.Text), txtCaminhoArquivo.Text) ;
+                //Email.ComporCamposEmailParaEnvio(txtEmail.Text, txtSenha.Text, txtEmailPara.Text, txtAssunto.Text, txtMensagem.Text, txtHost.Text, vSSL, int.Parse(txtPort.Text), txtCaminhoArquivo.Text) ;
+
+                //List<string> vListaDeArquivos;
+                string[] vListaDeArquivos = new string[lstArquivos.Items.Count];
+
+                for (int aux = 0;aux < lstArquivos.Items.Count; aux++)
+                {
+                    vListaDeArquivos[aux] = lstArquivos.Items[aux].ToString(); ;
+                }
+
+                Email.ComporCamposEmailParaEnvio(txtEmail.Text, txtSenha.Text, txtEmailPara.Text, txtAssunto.Text, txtMensagem.Text, txtHost.Text, vSSL, int.Parse(txtPort.Text), vListaDeArquivos) ;
 
                 if (Email.vMensagemErro == "")
                 {
@@ -66,13 +77,19 @@ namespace enviodeemail
             txtAssunto.Text = "";
         }
 
-        private void btnProcurar_Click(object sender, EventArgs e)
+
+        private void btnCarregarArquivos_Click(object sender, EventArgs e)
         {
             openFileDialog1.InitialDirectory = @"C:\";
             openFileDialog1.FileName = "";
             openFileDialog1.Title = "Selecionar Arquivo";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
-                txtCaminhoArquivo.Text = openFileDialog1.FileName;
+                lstArquivos.Items.Add(openFileDialog1.FileName);
+        }
+
+        private void btnRetirarArquivo_Click(object sender, EventArgs e)
+        {
+            lstArquivos.Items.Remove(lstArquivos.SelectedItem);
         }
     }
 }

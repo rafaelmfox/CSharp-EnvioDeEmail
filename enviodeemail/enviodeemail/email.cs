@@ -16,7 +16,7 @@ namespace enviodeemail
         public string vMensagemErro = "";
 
 
-        public void ComporCamposEmailParaEnvio(string vEmail,string vSenha,string vEmailDestinatario,string vAssunto,string vMensagem,string vHost,string vSSL,int vPort,string vCaminhoArquivo)
+        public void ComporCamposEmailParaEnvio(string vEmail,string vSenha,string vEmailDestinatario,string vAssunto,string vMensagem,string vHost,string vSSL,int vPort,string[] vCaminhoArquivo)
         {
             mail = new MailMessage();
 
@@ -40,11 +40,22 @@ namespace enviodeemail
                 vMensagemErro += "Por favor insira uma mensagem para o email\n";
 
 
-            if ((vCaminhoArquivo != null) || (vCaminhoArquivo != ""))
+            //string[] caminho = {@"c:\hosts", @"c:\hosts" };
+            if ((vCaminhoArquivo != null))
             {
-                Attachment data = new Attachment(vCaminhoArquivo, MediaTypeNames.Application.Octet);
-                mail.Attachments.Add(data);
+                for (int aux = 0; aux < vCaminhoArquivo.Length; aux++)
+                {
+                    Attachment data = new Attachment(vCaminhoArquivo[aux], MediaTypeNames.Application.Octet);
+                    mail.Attachments.Add(data);
+                }
             }
+
+
+            /* if ((vCaminhoArquivo != null) || (vCaminhoArquivo != ""))
+             {
+                 Attachment data = new Attachment(vCaminhoArquivo, MediaTypeNames.Application.Octet);
+                 mail.Attachments.Add(data);
+             }*/
 
 
             if ((vMensagem != null) || (vMensagem != ""))
