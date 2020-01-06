@@ -45,7 +45,7 @@ namespace enviodeemail
                     vListaDeArquivos[aux] = lstArquivos.Items[aux].ToString(); ;
                 }
 
-                Email.ComporCamposEmailParaEnvio(txtEmail.Text, txtSenha.Text, txtEmailPara.Text, txtAssunto.Text, txtMensagem.Text, txtHost.Text, vSSL, int.Parse(txtPort.Text), vListaDeArquivos) ;
+                Email.ComporCamposEmailParaEnvio(txtEmail.Text, txtSenha.Text, txtEmailPara.Text, txtAssunto.Text, txtMensagem.Text, txtHost.Text, vSSL, int.Parse(txtPort.Text), vListaDeArquivos,txtComCopia.Text,txtComCopiaOculta.Text) ;
 
                 if (Email.vMensagemErro == "")
                 {

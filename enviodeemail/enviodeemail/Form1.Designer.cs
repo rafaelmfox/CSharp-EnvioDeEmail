@@ -51,6 +51,10 @@
             this.lstArquivos = new System.Windows.Forms.ListBox();
             this.btnCarregarArquivos = new System.Windows.Forms.Button();
             this.btnRetirarArquivo = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtComCopia = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtComCopiaOculta = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtHost
@@ -124,7 +128,7 @@
             // 
             // btnEnviarEmail
             // 
-            this.btnEnviarEmail.Location = new System.Drawing.Point(70, 395);
+            this.btnEnviarEmail.Location = new System.Drawing.Point(70, 447);
             this.btnEnviarEmail.Name = "btnEnviarEmail";
             this.btnEnviarEmail.Size = new System.Drawing.Size(112, 40);
             this.btnEnviarEmail.TabIndex = 9;
@@ -174,16 +178,16 @@
             // 
             // txtAssunto
             // 
-            this.txtAssunto.Location = new System.Drawing.Point(70, 164);
+            this.txtAssunto.Location = new System.Drawing.Point(70, 216);
             this.txtAssunto.Name = "txtAssunto";
-            this.txtAssunto.Size = new System.Drawing.Size(221, 20);
+            this.txtAssunto.Size = new System.Drawing.Size(544, 20);
             this.txtAssunto.TabIndex = 7;
             this.txtAssunto.Text = "Assunto email";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 167);
+            this.label6.Location = new System.Drawing.Point(9, 219);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 13);
             this.label6.TabIndex = 14;
@@ -192,7 +196,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(2, 190);
+            this.label7.Location = new System.Drawing.Point(2, 242);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 13);
             this.label7.TabIndex = 16;
@@ -200,7 +204,7 @@
             // 
             // txtMensagem
             // 
-            this.txtMensagem.Location = new System.Drawing.Point(70, 190);
+            this.txtMensagem.Location = new System.Drawing.Point(70, 242);
             this.txtMensagem.Multiline = true;
             this.txtMensagem.Name = "txtMensagem";
             this.txtMensagem.Size = new System.Drawing.Size(544, 202);
@@ -209,7 +213,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(511, 395);
+            this.btnLimpar.Location = new System.Drawing.Point(511, 447);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(103, 40);
             this.btnLimpar.TabIndex = 17;
@@ -235,7 +239,7 @@
             this.lstArquivos.FormattingEnabled = true;
             this.lstArquivos.Location = new System.Drawing.Point(343, 9);
             this.lstArquivos.Name = "lstArquivos";
-            this.lstArquivos.Size = new System.Drawing.Size(271, 173);
+            this.lstArquivos.Size = new System.Drawing.Size(271, 134);
             this.lstArquivos.TabIndex = 21;
             // 
             // btnCarregarArquivos
@@ -250,7 +254,7 @@
             // 
             // btnRetirarArquivo
             // 
-            this.btnRetirarArquivo.Location = new System.Drawing.Point(620, 134);
+            this.btnRetirarArquivo.Location = new System.Drawing.Point(620, 31);
             this.btnRetirarArquivo.Name = "btnRetirarArquivo";
             this.btnRetirarArquivo.Size = new System.Drawing.Size(26, 22);
             this.btnRetirarArquivo.TabIndex = 23;
@@ -258,11 +262,47 @@
             this.btnRetirarArquivo.UseVisualStyleBackColor = true;
             this.btnRetirarArquivo.Click += new System.EventHandler(this.btnRetirarArquivo_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(33, 167);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(24, 13);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "CC:";
+            // 
+            // txtComCopia
+            // 
+            this.txtComCopia.Location = new System.Drawing.Point(70, 164);
+            this.txtComCopia.Name = "txtComCopia";
+            this.txtComCopia.Size = new System.Drawing.Size(221, 20);
+            this.txtComCopia.TabIndex = 24;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(33, 193);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(32, 13);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "CCO:";
+            // 
+            // txtComCopiaOculta
+            // 
+            this.txtComCopiaOculta.Location = new System.Drawing.Point(70, 190);
+            this.txtComCopiaOculta.Name = "txtComCopiaOculta";
+            this.txtComCopiaOculta.Size = new System.Drawing.Size(221, 20);
+            this.txtComCopiaOculta.TabIndex = 26;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 452);
+            this.ClientSize = new System.Drawing.Size(674, 529);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtComCopiaOculta);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtComCopia);
             this.Controls.Add(this.btnRetirarArquivo);
             this.Controls.Add(this.btnCarregarArquivos);
             this.Controls.Add(this.lstArquivos);
@@ -318,6 +358,10 @@
         private System.Windows.Forms.ListBox lstArquivos;
         private System.Windows.Forms.Button btnCarregarArquivos;
         private System.Windows.Forms.Button btnRetirarArquivo;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtComCopia;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtComCopiaOculta;
     }
 }
 

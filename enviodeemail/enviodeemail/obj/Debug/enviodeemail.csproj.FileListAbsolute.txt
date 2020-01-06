@@ -9,3 +9,4 @@ C:\Users\usuario\source\repos\enviodeemail\enviodeemail\obj\Debug\enviodeemail.c
 C:\Users\usuario\source\repos\enviodeemail\enviodeemail\obj\Debug\enviodeemail.csproj.CopyComplete
 C:\Users\usuario\source\repos\enviodeemail\enviodeemail\obj\Debug\enviodeemail.exe
 C:\Users\usuario\source\repos\enviodeemail\enviodeemail\obj\Debug\enviodeemail.pdb
+C:\Users\usuario\source\repos\enviodeemail\enviodeemail\obj\Debug\enviodeemail.csprojAssemblyReference.cache

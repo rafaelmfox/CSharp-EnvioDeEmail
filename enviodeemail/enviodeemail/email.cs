@@ -16,7 +16,7 @@ namespace enviodeemail
         public string vMensagemErro = "";
 
 
-        public void ComporCamposEmailParaEnvio(string vEmail,string vSenha,string vEmailDestinatario,string vAssunto,string vMensagem,string vHost,string vSSL,int vPort,string[] vCaminhoArquivo)
+        public void ComporCamposEmailParaEnvio(string vEmail,string vSenha,string vEmailDestinatario,string vAssunto,string vMensagem,string vHost,string vSSL,int vPort,string[] vCaminhoArquivo, string vCc,string vCco)
         {
             mail = new MailMessage();
 
@@ -39,8 +39,6 @@ namespace enviodeemail
             else
                 vMensagemErro += "Por favor insira uma mensagem para o email\n";
 
-
-            //string[] caminho = {@"c:\hosts", @"c:\hosts" };
             if ((vCaminhoArquivo != null))
             {
                 for (int aux = 0; aux < vCaminhoArquivo.Length; aux++)
@@ -50,12 +48,24 @@ namespace enviodeemail
                 }
             }
 
-
             /* if ((vCaminhoArquivo != null) || (vCaminhoArquivo != ""))
              {
                  Attachment data = new Attachment(vCaminhoArquivo, MediaTypeNames.Application.Octet);
                  mail.Attachments.Add(data);
              }*/
+
+           if (vCc != "")
+                if (ValidaEmail(vCc))
+                    mail.CC.Add(vCc);
+                else
+                    vMensagemErro += "Por favor verifique se o email do com copia foi digitado corretamente\n";
+
+
+            if (vCco != "")
+                if (ValidaEmail(vCco))
+                    mail.CC.Add(vCco);
+                else
+                    vMensagemErro += "Por favor verifique se o email do com copia oculta foi digitado corretamente\n";
 
 
             if ((vMensagem != null) || (vMensagem != ""))
@@ -97,6 +107,22 @@ namespace enviodeemail
                 retorno = true;
             if ((vEmail == null) || (vEmail == ""))
                 retorno = false;
+
+            if (vEmail.Contains(","))
+            {
+                string[] vEmailArray = vEmail.Split(',');
+
+                for (int aux = 0; aux < vEmailArray.Length; aux++)
+                {
+                    if ((vEmailArray[aux].Contains("@")) && (vEmailArray[aux].Contains(".com")))
+                        retorno = true;
+                    else
+                        return false;
+                }
+
+            }
+
+
 
             return retorno;
 
