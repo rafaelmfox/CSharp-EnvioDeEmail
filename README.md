@@ -8,7 +8,7 @@ Versao 1.0
 
 <b>Requisitos</b>
 <ol>
- <li>.net 4.0</li>
+ <li>.net 4.7.2</li>
  <li>Windows 7+</li>
  <li>x86 ou x64</li>
 </ol>
